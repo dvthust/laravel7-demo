@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/translate', 'HomeController@translate')->name('translate');
+Route::post('/translate', 'HomeController@translate')->name('translate.post');
+
+Route::get('/fluent-string', 'HomeController@fluentString')->name('fluent.string');
+Route::get('/posts', 'HomeController@posts')->name('posts');
